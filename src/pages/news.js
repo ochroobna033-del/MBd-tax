@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import { useState } from 'react'
-import Link from 'next/ink';
+import Link from 'next/link';
 
 export default function News() {
   const [activeNews, setActiveNews] = useState(null)
