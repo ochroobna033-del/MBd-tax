@@ -30,6 +30,10 @@ export default function Header() {
       href: '/audit',
       label: lang === 'en' ? 'Audit' : 'Аудит',
     },
+    {
+      href: '/news',
+      label: lang === 'en' ? 'news' : 'Мэдээ',
+    },
   ]
 
   return (

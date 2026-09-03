@@ -1,146 +1,325 @@
 import Image from 'next/image'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
-import TeamMemberCard from '@/components/TeamMemberCard'
 import { useLang } from '../langContext'
-
 
 export default function AboutPage() {
   const { lang } = useLang()
+
+  const isEnglish = lang === 'en'
+
   return (
     <>
       <Header />
-      <main className="pt-20 bg-[#0d1512] min-h-screen">
-        {/* Бидний тухай */}
-        <section id="bidni-tuhai" className="py-20 px-4">
+
+      <main className="pt-20 bg-[#0d1512] min-h-screen text-white">
+
+        {/* ==================== ABOUT US ==================== */}
+        <section
+          id="bidni-tuhai"
+          className="py-20 px-4 sm:px-6 lg:px-8"
+        >
           <div className="max-w-4xl mx-auto">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-8 text-center">
-              {lang === 'en' ? 'About us' : 'Бидний тухай'}
-            </h1>
-            <h2 className="text-2xl sm:text-3xl font-bold text-[#10b981] mb-6 text-center">
-              {lang === 'en' ? 'MBD Tax Tactic TMZ LLC' : 'ЭМ БИ ДИ ТАКС ТАКТИК ТМЗ ХХК'}
-            </h2>
-            <p className="text-white/85 text-base md:text-lg leading-relaxed mb-8">
-              {lang === 'en'
-                ? 'MBD Tax Tactic TMZ LLC was established in 2021 to provide accounting training from entry to professional level, certified tax advisory services, and comprehensive legal consulting based on financial statements. We also provide tax and financial reporting support and outsourced accounting services. We currently work with more than 150 clients, have successfully trained over 300 beginner accountants, and through our advanced programs have prepared more than 150 certified accountants and 50 certified tax advisors. We actively cooperate with “Erdmiin Undarga Consulting Center” and the auditing firm “MBD RD Star Tax”.'
-                : 'ЭМ БИ ДИ ТАКС ТАКТИК ТМЗ ХХК нь 2021 онд нягтлан бодох бүртгэлийн анхан шатнаас мэргэшүүлэх түвшин хүртэлх сургалтын үйлчилгээ үзүүлэх, татварын мэргэшсэн зөвлөхийн үйлчилгээ үзүүлэх, санхүүгийн тайлан болон түүнд суурилсан компанийн хууль зүйн зөвлөгөө үйлчилгээг цогцоор нь хүргэхээр байгуулагдсан. Мөн санхүү болон татварын тайлан гаргах зөвлөгөө өгөх, гэрээт нягтлан бодогчийн үйлчилгээ үзүүлэхээр ажиллаж байна. Одоогоор 150 гаруй байгууллагатай хамтран ажиллаж, 300 гаруй суралцагч анхан шатны хөтөлбөрөө амжилттай төгссөн, салбарт мэргэжлийн эхний шатны нягтлан бодогчийн албан тушаалд ажиллаж байна. Мэргэжил дээшлүүлэх хөтөлбөрт 150 гаруй суралцагч онлайн болон нүүрэн амны сургалтад оролцож, 50 гаруй мэргэшсэн нягтлан бодогч,  гаруй татварын мэргэшсэн зөвлөх бэлтгэж, үйл ажиллагаагаа өргөжүүлэн хөгжүүлж байна. \"ЭРДМИЙН УНДАРГА ЗӨВЛӨХ ҮЙЛЧИЛГЭЭНИЙ ТӨВ\" болон Auditing / \"ЭМ БИ ДИ АР ДИ СТАР ТАКС\" байгууллагуудтай ойр хамтрал эрхэлж байна.'}
-            </p>
 
-            <h3 className="text-xl font-semibold text-white mb-4">
-              {lang === 'en' ? 'Our current team' : 'Одоогоор'}
-            </h3>
-            <ul className="text-white/85 text-base md:text-lg leading-relaxed mb-8 space-y-2 list-disc list-inside">
-              {lang === 'en' ? (
-                <>
-                  <li>One permanent certified accountant and certified tax advisor</li>
-                  <li>Two certified tax advisors</li>
-                  <li>Seven accountants</li>
-                  <li>One legal advisor</li>
-                  <li>One marketing advisor — 12 staff in total.</li>
-                </>
-              ) : (
-                <>
-                  <li>Хугацаагүй мэргэшсэн нягтлан бодогч, татварын мэргэшсэн зөвлөх нэг</li>
-                  <li>Татварын мэргэшсэн зөвлөх хоёр</li>
-                  <li>Нягтлан бодогч долоо</li>
-                  <li>Хуулийн зөвлөх нэг</li>
-                  <li>Маркетингийн зөвлөх нэг орон тоотойгоор нийт 12 ажилтантай үйл ажиллагаагаа явуулж байна.</li>
-                </>
-              )}
-            </ul>
+            {/* Title */}
+            <div className="text-center mb-12">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6">
+                {isEnglish ? 'About Us' : 'Бидний тухай'}
+              </h1>
 
-            <h3 className="text-xl font-semibold text-white mb-4">
-              {lang === 'en' ? 'Our vision' : 'Манай компанийн алсын хараа:'}
-            </h3>
-            <p className="text-white/85 text-base md:text-lg leading-relaxed mb-8">
-              {lang === 'en'
-                ? 'To become a leading provider of tax and financial consulting services in Mongolia, creating sustainable growth and long-term value for businesses through professional expertise, innovative solutions, and trust-based partnerships.'
-                : 'Монголын бизнесийн татвар, санхүүгийн зөвлөх үйлчилгээний салбарт манлайлагч болж, мэргэжлийн өндөр ур чадвар, инновац, итгэлцэлд суурилсан шийдлээр дамжуулан байгууллагуудын тогтвортой хөгжил, урт хугацааны үнэ цэнийг бүтээнэ.'}
-            </p>
+              <div className="w-20 h-1 bg-[#10b981] mx-auto rounded-full mb-6" />
 
-            <h3 className="text-xl font-semibold text-white mb-4">
-              {lang === 'en' ? 'Mission' : 'Эрхэм зорилго:'}
-            </h3>
-            <p className="text-white/85 text-base md:text-lg leading-relaxed mb-8">
-              {lang === 'en'
-                ? 'To integrate global innovations in finance and accounting into our offerings, prioritize client satisfaction, and deliver real value through our services regardless of time and place.'
-                : 'Санхүү нягтлан бодох бүртгэлийн дэлхийн инновацийг өөрсдийн бүтээгдэхүүнд шингээн хэрэглэгчийн сэтгэл ханамжийг дээдлэн цаг хугацаа, орон зай үл хамааран үйлчилгээ үзүүлэн бодит үр өгөөжийг харилцагчид бий болгох.'}
-            </p>
-
-            <h3 className="text-xl font-semibold text-white mb-4">
-              {lang === 'en' ? 'Goals' : 'Зорилт:'}
-            </h3>
-            <ul className="text-white/85 text-base md:text-lg leading-relaxed space-y-2 list-disc list-inside">
-              {lang === 'en' ? (
-                <>
-                  <li>Build a capable, professional and stable workforce</li>
-                  <li>Be an innovator and initiator of new ideas</li>
-                  <li>To continuously listen to the needs, interests and feedback of our clients and partners, and to improve our products and services accordingly.</li>
-                </>
-              ) : (
-                <>
-                  <li>Чадвартай, мэргэшсэн тогтвортой хүний нөөцийг бүрдүүлэх</li>
-                  <li>Шинэлэг шинийг санаачлагч байх</li>
-                  <li>Харилцагч, хэрэглэгчдийн хүсэл, сонирхол, шүүмжийг цаг үргэлж сонсох нь бидний бүтээгдэхүүнийг хөгжүүлэх, үйлчилгээг төгөлдөржүүлэх зорилтууд юм.</li>
-                </>
-              )}
-            </ul>
-          </div>
-        </section>
-
-        {/* Мэндчилгээ */}
-        <section id="mendchilgee" className="py-20 px-4 border-t border-white/5">
-          <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-center">
-            <div>
-              <h2 className="text-3xl sm:text-4xl font-bold text-white mb-8 text-center md:text-left">
-                {lang === 'en' ? 'Greetings' : 'Мэндчилгээ'}
+              <h2 className="text-2xl sm:text-3xl font-bold text-[#10b981]">
+                {isEnglish
+                  ? 'MBD Tax Tactic TMZ LLC'
+                  : 'ЭМ БИ ДИ ТАКС ТАКТИК ТМЗ ХХК'}
               </h2>
-              <p className="text-white/85 text-base md:text-lg leading-relaxed">
-                {lang === 'en' ? (
+            </div>
+
+            {/* Company introduction */}
+            <div className="space-y-6">
+              <p className="text-white/85 text-base md:text-lg leading-8">
+                {isEnglish
+                  ? 'MBD Tax Tactic TMZ LLC was established in 2021 with the goal of providing professional and comprehensive services in accounting, taxation, finance, and legal consulting. Our services include accounting training from beginner to professional level, certified tax advisory services, financial and tax reporting support, legal consulting based on financial statements, and outsourced accounting services.'
+                  : 'ЭМ БИ ДИ ТАКС ТАКТИК ТМЗ ХХК нь 2021 онд нягтлан бодох бүртгэл, татвар, санхүү болон хууль зүйн зөвлөх үйлчилгээг мэргэжлийн түвшинд, цогцоор нь хүргэх зорилгоор байгуулагдсан.'}
+              </p>
+
+              <p className="text-white/85 text-base md:text-lg leading-8">
+                {isEnglish
+                  ? 'We provide accounting training from beginner to professional level, certified tax advisory services, financial and tax reporting support, legal consulting based on financial statements, and outsourced accounting services.'
+                  : 'Бид нягтлан бодох бүртгэлийн анхан шатнаас мэргэжил дээшлүүлэх түвшин хүртэлх сургалт, татварын мэргэшсэн зөвлөх үйлчилгээ, санхүү болон татварын тайлан гаргах зөвлөгөө, санхүүгийн тайланд үндэслэсэн компанийн хууль зүйн зөвлөгөө болон гэрээт нягтлан бодогчийн үйлчилгээг үзүүлэн ажиллаж байна.'}
+              </p>
+
+              <p className="text-white/85 text-base md:text-lg leading-8">
+                {isEnglish
+                  ? 'We currently work with more than 150 organizations. More than 300 learners have successfully completed our beginner accounting programs, while more than 150 learners have participated in our professional development programs through online and classroom training. We continue to expand our activities by preparing qualified accounting and tax professionals.'
+                  : 'Одоогоор бид 150 гаруй байгууллагатай хамтран ажиллаж байна. Мөн 300 гаруй суралцагч анхан шатны нягтлан бодох бүртгэлийн хөтөлбөрийг амжилттай төгсөж, салбартаа ажиллаж байна. Мэргэжил дээшлүүлэх хөтөлбөрт 150 гаруй суралцагч онлайн болон танхимын сургалтад хамрагдан, мэргэжлийн ур чадвараа дээшлүүлсэн.'}
+              </p>
+
+              <p className="text-white/85 text-base md:text-lg leading-8">
+                {isEnglish
+                  ? 'We also maintain close cooperation with Erdmiiin Undarga Consulting Center and the auditing firm MBD RD Star Tax.'
+                  : 'Бид “ЭРДМИЙН УНДАРГА ЗӨВЛӨХ ҮЙЛЧИЛГЭЭНИЙ ТӨВ” болон аудитын “ЭМ БИ ДИ АР ДИ СТАР ТАКС” байгууллагуудтай нягт хамтран ажиллаж, харилцагчдад цогц мэргэжлийн үйлчилгээ хүргэхийг зорин ажилладаг.'}
+              </p>
+            </div>
+
+            {/* ==================== CURRENT TEAM ==================== */}
+            <div className="mt-16">
+              <h3 className="text-xl sm:text-2xl font-semibold text-white mb-6">
+                {isEnglish ? 'Our Current Team' : 'Манай хамт олон'}
+              </h3>
+
+              <div className="bg-white/[0.03] border border-white/10 rounded-2xl p-6 sm:p-8">
+                <ul className="text-white/85 text-base md:text-lg leading-8 space-y-3">
+                  {isEnglish ? (
+                    <>
+                      <li>
+                        • One certified accountant and certified tax advisor
+                      </li>
+                      <li>
+                        • Two certified tax advisors
+                      </li>
+                      <li>
+                        • Seven accountants
+                      </li>
+                      <li>
+                        • One legal advisor
+                      </li>
+                      <li>
+                        • One marketing advisor
+                      </li>
+                      <li className="pt-2 text-[#10b981] font-semibold">
+                        • 12 professionals in total
+                      </li>
+                    </>
+                  ) : (
+                    <>
+                      <li>
+                        • Мэргэшсэн нягтлан бодогч, татварын мэргэшсэн зөвлөх – 1
+                      </li>
+                      <li>
+                        • Татварын мэргэшсэн зөвлөх – 2
+                      </li>
+                      <li>
+                        • Нягтлан бодогч – 7
+                      </li>
+                      <li>
+                        • Хуулийн зөвлөх – 1
+                      </li>
+                      <li>
+                        • Маркетингийн зөвлөх – 1
+                      </li>
+                      <li className="pt-2 text-[#10b981] font-semibold">
+                        • Нийт 12 мэргэжилтэнтэй
+                      </li>
+                    </>
+                  )}
+                </ul>
+              </div>
+            </div>
+
+            {/* ==================== VISION ==================== */}
+            <div className="mt-16">
+              <h3 className="text-xl sm:text-2xl font-semibold text-white mb-5">
+                {isEnglish ? 'Our Vision' : 'Манай компанийн алсын хараа'}
+              </h3>
+
+              <p className="text-white/85 text-base md:text-lg leading-8">
+                {isEnglish
+                  ? 'To become a leading provider of tax, financial, and accounting consulting services in Mongolia, creating sustainable growth and long-term value for businesses through professional expertise, innovative solutions, and trust-based partnerships.'
+                  : 'Монголын бизнесийн татвар, санхүү, нягтлан бодох бүртгэлийн зөвлөх үйлчилгээний салбарт манлайлагч болж, мэргэжлийн өндөр ур чадвар, инновац, итгэлцэлд суурилсан шийдлээр дамжуулан байгууллагуудын тогтвортой хөгжил, урт хугацааны үнэ цэнийг бүтээнэ.'}
+              </p>
+            </div>
+
+            {/* ==================== MISSION ==================== */}
+            <div className="mt-12">
+              <h3 className="text-xl sm:text-2xl font-semibold text-white mb-5">
+                {isEnglish ? 'Our Mission' : 'Эрхэм зорилго'}
+              </h3>
+
+              <p className="text-white/85 text-base md:text-lg leading-8">
+                {isEnglish
+                  ? 'To integrate global innovations in finance and accounting into our services, prioritize client satisfaction, and create real value through professional knowledge, practical experience, and reliable solutions regardless of time and place.'
+                  : 'Санхүү, нягтлан бодох бүртгэлийн дэлхийн шилдэг инноваци, шинэ шийдлийг үйлчилгээндээ нэвтрүүлж, харилцагчийн сэтгэл ханамжийг эрхэмлэн, мэргэжлийн мэдлэг, практик туршлага, найдвартай шийдлээр дамжуулан цаг хугацаа, орон зай үл хамааран бодит үнэ цэнийг бий болгоно.'}
+              </p>
+            </div>
+
+            {/* ==================== GOALS ==================== */}
+            <div className="mt-12">
+              <h3 className="text-xl sm:text-2xl font-semibold text-white mb-5">
+                {isEnglish ? 'Our Goals' : 'Зорилт'}
+              </h3>
+
+              <ul className="text-white/85 text-base md:text-lg leading-8 space-y-4">
+                {isEnglish ? (
                   <>
-                    We are pleased to greet you—our valued clients, partner organizations, and students—through our website.
-                    <br /><br />
-                    As we continue to adapt to the growing needs of businesses and changes in the market environment, we provide professional and reliable consulting services in the areas of tax, finance, and accounting. We are committed to delivering practical solutions tailored to the unique needs and goals of our clients while creating sustainable value through our expertise and experience.
-
-                    The foundation of our success lies in our professional capabilities, the dedication and commitment of our team, our continuous pursuit of development, and most importantly, the trust and confidence of our valued clients. We would like to express our sincere gratitude to all our clients, partner organizations, learners, and team members who have supported and inspired us throughout our journey.
-                    <br /><br />
-                    Through our website, we believe you will gain a deeper understanding of our organization’s vision, mission, areas of operation, and professional services, allowing you to better recognize the value we strive to deliver.
-
-                     <br /><br />
-                     Moving forward, we will continue to be a trusted consulting partner for our clients by providing professional knowledge, practical experience, and innovative solutions while creating lasting value through meaningful partnerships.
-
+                    <li>
+                      • Build a capable, professional, and stable workforce.
+                    </li>
+                    <li>
+                      • Continuously innovate and introduce new ideas and solutions.
+                    </li>
+                    <li>
+                      • Listen to the needs, interests, and feedback of our clients and partners and continuously improve our products and services.
+                    </li>
                   </>
                 ) : (
                   <>
-                    Эрхэм хүндэт харилцагч, хамтран ажилладаг байгуулагууд болон суралцагчид та бүхэнтэйгээ цахим хуудсаараа мэндчилж байгаадаа баяртай байна.
-                    <br /><br />
-                    Бид өсөн нэмэгдэж буй бизнесийн хэрэгцээ, зах зээлийн өөрчлөлттэй хөл нийлүүлэн алхаж, татвар, санхүү, нягтлан бодох бүртгэлийн чиглэлээр мэргэжлийн, найдвартай зөвлөх үйлчилгээг хүргэн ажиллаж байна. Харилцагч байгууллагуудынхаа онцлог хэрэгцээ, зорилгод нийцсэн зөв шийдэл, бодит үнэ цэнийг бий болгохыг бид эрхэмлэдэг.
-
-                    Бидний амжилтын үндэс нь мэргэжлийн өндөр ур чадвар, хамт олны хичээл зүтгэл, тасралтгүй хөгжих эрмэлзэл болон харилцагчдынхаа бидэнд үзүүлсэн итгэл юм. Бидэнд урам зориг, дэмжлэг үзүүлж ирсэн нийт харилцагч, түнш байгууллагууд, суралцагчид болон хамт олондоо чин сэтгэлийн талархал илэрхийлье.
-
-                    <br /><br />
-                    Манай вэб сайтаар дамжуулан байгууллагын эрхэм зорилго, үйл ажиллагааны чиглэл, мэргэжлийн үйлчилгээний талаарх дэлгэрэнгүй мэдээлэлтэй танилцаж, бидний үнэ цэнэ, хандлагыг илүү сайн ойлгоно гэдэгт итгэлтэй байна
-
-                    <br /><br />
-                    Бид цаашид ч мэргэжлийн мэдлэг, туршлагадаа тулгуурлан харилцагчдынхаа найдвартай зөвлөх түнш байж, хамтын үнэ цэнийг бүтээн ажиллах болно.
+                    <li>
+                      • Чадвартай, мэргэшсэн, тогтвортой хүний нөөцийг бүрдүүлэх.
+                    </li>
+                    <li>
+                      • Шинэлэг санаа, шинэ шийдлийг тасралтгүй санаачлан хэрэгжүүлэх.
+                    </li>
+                    <li>
+                      • Харилцагч, хэрэглэгчдийн хүсэл, сонирхол, санал шүүмжийг цаг үргэлж сонсож, бүтээгдэхүүн, үйлчилгээгээ тасралтгүй хөгжүүлэх.
+                    </li>
                   </>
                 )}
-              </p>
+              </ul>
             </div>
+
+          </div>
+        </section>
+
+        {/* ==================== GREETINGS ==================== */}
+        <section
+          id="mendchilgee"
+          className="py-20 px-4 sm:px-6 lg:px-8 border-t border-white/5"
+        >
+          <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 lg:gap-16 items-center">
+
+            {/* Greeting text */}
+            <div>
+              <h2 className="text-3xl sm:text-4xl font-bold text-white mb-8 text-center md:text-left">
+                {isEnglish ? 'Greetings' : 'Мэндчилгээ'}
+              </h2>
+
+              <div className="text-white/85 text-base md:text-lg leading-8 space-y-6">
+
+                {isEnglish ? (
+                  <>
+                    <p>
+                      We are pleased to greet you—our valued clients,
+                      partner organizations, and students—through our website.
+                    </p>
+
+                    <p>
+                      As we continue to adapt to the growing needs of
+                      businesses and changes in the market environment, we
+                      provide professional and reliable consulting services in
+                      the areas of tax, finance, and accounting.
+                    </p>
+
+                    <p>
+                      We are committed to delivering practical solutions
+                      tailored to the unique needs and goals of our clients
+                      while creating sustainable value through our expertise
+                      and experience.
+                    </p>
+
+                    <p>
+                      The foundation of our success lies in our professional
+                      capabilities, the dedication and commitment of our team,
+                      our continuous pursuit of development, and most
+                      importantly, the trust and confidence of our valued
+                      clients.
+                    </p>
+
+                    <p>
+                      We would like to express our sincere gratitude to all
+                      our clients, partner organizations, learners, and team
+                      members who have supported and inspired us throughout
+                      our journey.
+                    </p>
+
+                    <p>
+                      Through our website, we believe you will gain a deeper
+                      understanding of our organization’s vision, mission,
+                      areas of operation, and professional services, allowing
+                      you to better recognize the value we strive to deliver.
+                    </p>
+
+                    <p>
+                      Moving forward, we will continue to be a trusted
+                      consulting partner for our clients by providing
+                      professional knowledge, practical experience, and
+                      innovative solutions while creating lasting value
+                      through meaningful partnerships.
+                    </p>
+                  </>
+                ) : (
+                  <>
+                    <p>
+                      Эрхэм хүндэт харилцагч, хамтран ажилладаг байгууллагууд
+                      болон суралцагчид та бүхэнтэйгээ цахим хуудсаараа
+                      мэндчилж байгаадаа баяртай байна.
+                    </p>
+
+                    <p>
+                      Бид өсөн нэмэгдэж буй бизнесийн хэрэгцээ, зах зээлийн
+                      өөрчлөлттэй хөл нийлүүлэн алхаж, татвар, санхүү,
+                      нягтлан бодох бүртгэлийн чиглэлээр мэргэжлийн,
+                      найдвартай зөвлөх үйлчилгээг хүргэн ажиллаж байна.
+                    </p>
+
+                    <p>
+                      Харилцагч байгууллагуудынхаа онцлог хэрэгцээ, зорилгод
+                      нийцсэн зөв шийдэл, бодит үнэ цэнийг бий болгохыг бид
+                      эрхэмлэдэг.
+                    </p>
+
+                    <p>
+                      Бидний амжилтын үндэс нь мэргэжлийн өндөр ур чадвар,
+                      хамт олны хичээл зүтгэл, тасралтгүй хөгжих эрмэлзэл
+                      болон харилцагчдынхаа бидэнд үзүүлсэн итгэл юм.
+                    </p>
+
+                    <p>
+                      Бидэнд урам зориг, дэмжлэг үзүүлж ирсэн нийт харилцагч,
+                      түнш байгууллагууд, суралцагчид болон хамт олондоо
+                      чин сэтгэлийн талархал илэрхийлье.
+                    </p>
+
+                    <p>
+                      Манай вэб сайтаар дамжуулан байгууллагын алсын хараа,
+                      эрхэм зорилго, үйл ажиллагааны чиглэл болон мэргэжлийн
+                      үйлчилгээний талаарх дэлгэрэнгүй мэдээлэлтэй танилцаж,
+                      бидний үнэ цэнэ, хандлагыг илүү сайн ойлгоно гэдэгт
+                      итгэлтэй байна.
+                    </p>
+
+                    <p>
+                      Бид цаашид ч мэргэжлийн мэдлэг, туршлагадаа тулгуурлан
+                      харилцагчдынхаа найдвартай зөвлөх түнш байж, инновац,
+                      чанар, итгэлцэлд суурилсан үйлчилгээг хүргэн, хамтын
+                      үнэ цэнийг бүтээн ажиллах болно.
+                    </p>
+                  </>
+                )}
+
+              </div>
+            </div>
+
+            {/* Greeting image */}
             <div className="flex justify-center">
-              <div className="relative w-full max-w-md aspect-[4/5] rounded-2xl overflow-hidden bg-[#161b22] border border-white/10">
+              <div className="relative w-full max-w-md aspect-[4/5] rounded-2xl overflow-hidden bg-[#161b22] border border-white/10 shadow-2xl">
                 <Image
                   src="/mend.jpg"
-                  alt={lang === 'en' ? 'Greetings' : 'Мэндчилгээ'}
+                  alt={isEnglish ? 'MBD Tax Tactic Greetings' : 'Мэндчилгээ'}
                   fill
+                  priority
                   className="object-cover object-center"
                   sizes="(max-width: 768px) 100vw, 50vw"
                 />
               </div>
             </div>
+
           </div>
         </section>
+
       </main>
+
       <Footer />
     </>
   )
