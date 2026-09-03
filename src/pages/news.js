@@ -1852,18 +1852,18 @@ export default function News() {
                 санхүүгийн тогтвортой байдлыг хамгаална.
               </p>
               <div className="mt-7 flex flex-col justify-center gap-3 sm:flex-row">
-                <link
+                <Link
                   href="/training"
                   className="rounded-xl bg-green-600 px-6 py-3.5 text-sm font-bold text-white shadow-lg shadow-green-600/20 transition-all duration-300 hover:-translate-y-1 hover:bg-green-500"
                 >
                   Сургалт үзэх →
-                </link>
-                <link
+                </Link>
+                <Link
                   href="/contact"
                   className="rounded-xl border border-gray-800 bg-gray-950 px-6 py-3.5 text-sm font-bold text-gray-300 transition-all duration-300 hover:-translate-y-1 hover:border-green-500/40 hover:text-white"
                 >
                   Холбоо барих
-                </link>
+                </Link>
               </div>
             </div>
           </div>
@@ -1878,9 +1878,9 @@ export default function News() {
             <div className="grid gap-10 md:grid-cols-3">
               {/* BRAND */}
               <div>
-                <link href="/" className="text-xl font-black text-white">
+                <Link href="/" className="text-xl font-black text-white">
                   MBD <span className="text-green-400">TAX TACTIC TMZ</span>
-                </link>
+                </Link>
                 <p className="mt-4 max-w-sm text-sm leading-6 text-gray-600">
                   Татвар, нягтлан бодох бүртгэл болон
                   санхүүгийн зөвлөгөө, мэдээллийг
@@ -1892,27 +1892,27 @@ export default function News() {
               <div>
                 <h3 className="font-bold text-white">Хурдан холбоос</h3>
                 <div className="mt-4 flex flex-col gap-3 text-sm">
-                  <link
+                  <Link
                     href="/"
                     className="text-gray-600 transition hover:text-green-400"
                   >
                     Нүүр
-                  </link>
-                  <link
+                  </Link>
+                  <Link
                     href="/training"
                     className="text-gray-600 transition hover:text-green-400"
                   >
                     Сургалт
-                  </link>
-                  <link href="/news" className="text-green-400">
+                  </Link>
+                  <Link href="/news" className="text-green-400">
                     Мэдээ
-                  </link>
-                  <link
+                  </Link>
+                  <Link
                     href="/contact"
                     className="text-gray-600 transition hover:text-green-400"
                   >
                     Холбоо барих
-                  </link>
+                  </Link>
                 </div>
               </div>
 
@@ -2005,14 +2005,14 @@ export default function News() {
                 </div>
               </div>
 
-              <link
+              <Link
                 href={selectedReport.link}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center justify-center w-full px-5 py-4 rounded-xl bg-gray-900 text-white font-semibold hover:bg-gray-700 transition-all"
               >
                 Тайлангийн систем рүү орох →
-              </link>
+              </Link>
 
               <button
                 type="button"
