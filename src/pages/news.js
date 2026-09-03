@@ -1445,50 +1445,50 @@ export default function News() {
         <header className="sticky top-0 z-50 border-b border-gray-800/80 bg-gray-950/90 backdrop-blur-xl">
           <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
             {/* LOGO */}
-            <a href="/" className="group">
+            <link href="/" className="group">
               <div className="text-lg font-black tracking-tight text-white transition group-hover:text-green-400 sm:text-xl">
                 MBD <span className="text-green-400">TAX TACTIC TMZ</span>
               </div>
               <div className="text-[9px] font-semibold uppercase tracking-[0.25em] text-gray-600">
                 Tax Advisory
               </div>
-            </a>
+            </link>
 
             {/* DESKTOP NAV */}
             <nav className="hidden items-center gap-2 md:flex">
-              <a
+              <link
                 href="/"
                 className="rounded-xl px-4 py-2.5 text-sm font-semibold text-gray-400 transition hover:bg-gray-900 hover:text-white"
               >
                 Нүүр
-              </a>
-              <a
+              </link>
+              <link
                 href="/training"
                 className="rounded-xl px-4 py-2.5 text-sm font-semibold text-gray-400 transition hover:bg-gray-900 hover:text-white"
               >
                 Сургалт
-              </a>
-              <a
+              </link>
+              <link
                 href="/news"
                 className="rounded-xl bg-green-600 px-4 py-2.5 text-sm font-bold text-white shadow-lg shadow-green-600/20"
               >
                 Мэдээ
-              </a>
-              <a
+              </link>
+              <link
                 href="/contact"
                 className="rounded-xl px-4 py-2.5 text-sm font-semibold text-gray-400 transition hover:bg-gray-900 hover:text-white"
               >
                 Холбоо барих
-              </a>
+              </link>
             </nav>
 
             {/* MOBILE BUTTON */}
-            <a
+            <link
               href="/training"
               className="rounded-xl border border-gray-800 bg-gray-900 px-4 py-2 text-xs font-bold text-gray-300 transition hover:border-green-500 hover:text-white md:hidden"
             >
               Сургалт →
-            </a>
+            </link>
           </div>
         </header>
 
@@ -1852,18 +1852,18 @@ export default function News() {
                 санхүүгийн тогтвортой байдлыг хамгаална.
               </p>
               <div className="mt-7 flex flex-col justify-center gap-3 sm:flex-row">
-                <a
+                <link
                   href="/training"
                   className="rounded-xl bg-green-600 px-6 py-3.5 text-sm font-bold text-white shadow-lg shadow-green-600/20 transition-all duration-300 hover:-translate-y-1 hover:bg-green-500"
                 >
                   Сургалт үзэх →
-                </a>
-                <a
+                </link>
+                <link
                   href="/contact"
                   className="rounded-xl border border-gray-800 bg-gray-950 px-6 py-3.5 text-sm font-bold text-gray-300 transition-all duration-300 hover:-translate-y-1 hover:border-green-500/40 hover:text-white"
                 >
                   Холбоо барих
-                </a>
+                </link>
               </div>
             </div>
           </div>
@@ -1878,9 +1878,9 @@ export default function News() {
             <div className="grid gap-10 md:grid-cols-3">
               {/* BRAND */}
               <div>
-                <a href="/" className="text-xl font-black text-white">
+                <link href="/" className="text-xl font-black text-white">
                   MBD <span className="text-green-400">TAX TACTIC TMZ</span>
-                </a>
+                </link>
                 <p className="mt-4 max-w-sm text-sm leading-6 text-gray-600">
                   Татвар, нягтлан бодох бүртгэл болон
                   санхүүгийн зөвлөгөө, мэдээллийг
@@ -2005,14 +2005,14 @@ export default function News() {
                 </div>
               </div>
 
-              <a
+              <link
                 href={selectedReport.link}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center justify-center w-full px-5 py-4 rounded-xl bg-gray-900 text-white font-semibold hover:bg-gray-700 transition-all"
               >
                 Тайлангийн систем рүү орох →
-              </a>
+              </link>
 
               <button
                 type="button"
