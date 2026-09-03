@@ -1892,27 +1892,27 @@ export default function News() {
               <div>
                 <h3 className="font-bold text-white">Хурдан холбоос</h3>
                 <div className="mt-4 flex flex-col gap-3 text-sm">
-                  <a
+                  <link
                     href="/"
                     className="text-gray-600 transition hover:text-green-400"
                   >
                     Нүүр
-                  </a>
-                  <a
+                  </link>
+                  <link
                     href="/training"
                     className="text-gray-600 transition hover:text-green-400"
                   >
                     Сургалт
-                  </a>
-                  <a href="/news" className="text-green-400">
+                  </link>
+                  <link href="/news" className="text-green-400">
                     Мэдээ
-                  </a>
-                  <a
+                  </link>
+                  <link
                     href="/contact"
                     className="text-gray-600 transition hover:text-green-400"
                   >
                     Холбоо барих
-                  </a>
+                  </link>
                 </div>
               </div>
 
